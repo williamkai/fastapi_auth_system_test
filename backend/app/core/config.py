@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     ADMIN_PASSWORD: str = "admin123"
 
     # 前端網址（用於 CORS 設定）
-    FRONTEND_URL: str = "http://127.0.0.1:5173" 
+    FRONTEND_URL: str = "http://localhost:3000" 
 
     class Config:
         env_file = ".env"  # 明確指定相對路徑（以 main.py 執行位置為基準）

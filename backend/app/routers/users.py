@@ -7,11 +7,11 @@ from app.schemas import user as schemas_user
 
 router = APIRouter(tags=["Users"])
 
-@router.get("/users", response_model=list[schemas_user.UserDetailOut])
+@router.get("/", response_model=list[schemas_user.UserDetailOut])
 def list_users(db: Session = Depends(get_db), _: schemas_user.UserOut = Depends(admin_required)):
     return crud_user.get_all_users(db)
 
-@router.patch("/users/{user_id}/status")
+@router.patch("/{user_id}/status")
 def update_user_status_route(
     user_id: int,
     update: schemas_user.UserUpdateStatus,
@@ -36,7 +36,7 @@ def update_user_status_route(
 
 
 
-@router.delete("/users/{user_id}")
+@router.delete("/{user_id}")
 def delete_user(
     user_id: int,
     db: Session = Depends(get_db),

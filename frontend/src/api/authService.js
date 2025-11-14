@@ -109,14 +109,14 @@ export async function refreshToken() {
  * 獲取當前登入使用者的資訊
  */
 export function getMe() {
-  return apiFetch('/api/v1/users/me');
+  return apiFetch('/api/v1/me');
 }
 
 /**
  * (Admin) 獲取所有使用者列表
  */
 export function getUsers() {
-  return apiFetch('/api/v1/users/users');
+  return apiFetch('/api/v1/users');
 }
 
 /**

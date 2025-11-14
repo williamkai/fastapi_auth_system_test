@@ -60,7 +60,7 @@ app.add_middleware(
 # ------------------------------
 app.include_router(auth.router, prefix="/api/v1/auth")
 app.include_router(users.router, prefix="/api/v1/users")
-app.include_router(me.router, prefix="/api/v1/users")
+app.include_router(me.router, prefix="/api/v1/me")
 
 # ------------------------------
 # 測試啟動訊息
