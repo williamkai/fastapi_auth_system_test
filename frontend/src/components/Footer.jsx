@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer>
-            © 2025 FastAPI 身份驗證系統 - 測試
+            © 2025  FastAPI 用戶管理系統 - 測試
         </footer>
     );
 }

@@ -1,6 +1,7 @@
 import { apiFetch } from './api';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8010'; // 你的後端 API 網址
+const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8010';
+// 'http://127.0.0.1:8010','https://fastapi-auth-system-test.onrender.com'
 
 /**
  * 註冊新使用者
