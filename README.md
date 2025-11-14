@@ -85,7 +85,7 @@
 
 1.  **Clone 專案**
     ```bash
-    git clone <your-repo-url>
+    git clone https://github.com/williamkai/fastapi_auth_system_test.git
     cd fastapi_auth_system_test
     ```
 
