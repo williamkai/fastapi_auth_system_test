@@ -246,7 +246,7 @@ pip install pytest
 ```bash
 pytest tests/
 ```
-3. 預期測試覆蓋：
+3. 預期測試：
 - 用戶註冊 / 登入
 - 權限驗證 (admin vs user)
 - Token 刷新機制
