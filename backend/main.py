@@ -58,9 +58,9 @@ app.add_middleware(
 # ------------------------------
 # 導入 routers
 # ------------------------------
-app.include_router(auth.router)
-app.include_router(users.router)
-app.include_router(me.router)
+app.include_router(auth.router, prefix="/api/v1/auth")
+app.include_router(users.router, prefix="/api/v1/users")
+app.include_router(me.router, prefix="/api/v1/users")
 
 # ------------------------------
 # 測試啟動訊息

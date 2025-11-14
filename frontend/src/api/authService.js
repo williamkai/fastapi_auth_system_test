@@ -30,7 +30,7 @@ export async function registerUser(userData) {
 
   // --- 發送 API 請求 ---
 
-  const response = await fetch(`${API_URL}/register`, { // 註冊的 API 端點是 /register
+  const response = await fetch(`${API_URL}/api/v1/auth/register`, { // 註冊的 API 端點是 /register
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export async function loginUser(username, password) {
   params.append('username', username);
   params.append('password', password);
 
-  const response = await fetch(`${API_URL}/login`, {
+  const response = await fetch(`${API_URL}/api/v1/auth/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -84,7 +84,7 @@ export async function refreshToken() {
     throw new Error('No refresh token found');
   }
 
-  const response = await fetch(`${API_URL}/refresh`, {
+  const response = await fetch(`${API_URL}/api/v1/auth/refresh`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -109,14 +109,14 @@ export async function refreshToken() {
  * 獲取當前登入使用者的資訊
  */
 export function getMe() {
-  return apiFetch('/me');
+  return apiFetch('/api/v1/users/me');
 }
 
 /**
  * (Admin) 獲取所有使用者列表
  */
 export function getUsers() {
-  return apiFetch('/users');
+  return apiFetch('/api/v1/users/users');
 }
 
 /**
@@ -125,7 +125,7 @@ export function getUsers() {
  * @param {boolean} isActive - 是否啟用
  */
 export function updateUserStatus(userId, isActive) {
-  return apiFetch(`/users/${userId}/status`, {
+  return apiFetch(`/api/v1/users/${userId}/status`, {
     method: 'PATCH',
     body: JSON.stringify({ is_active: isActive }),
   });
@@ -136,7 +136,7 @@ export function updateUserStatus(userId, isActive) {
  * @param {number} userId - 使用者 ID
  */
 export function deleteUser(userId) {
-  return apiFetch(`/users/${userId}`, {
+  return apiFetch(`/api/v1/users/${userId}`, {
     method: 'DELETE',
   });
 }
