@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# 虛擬環境 
+# venv/
+# env/
+# .env/
+
+# SQLite 資料庫
+*.db
+*.sqlite3
+
+# FastAPI / logs
+*.log
+
+# IDE / editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Docker
+# *.env
+# docker-compose.override.yml
+
+# macOS
+.DS_Store
