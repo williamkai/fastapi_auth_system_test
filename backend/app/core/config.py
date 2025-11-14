@@ -3,7 +3,7 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     APP_NAME: str = "FastAPI Auth System"
-    DATABASE_URL: str = "sqlite:///./test.db"
+    DATABASE_URL: str = "sqlite:///./FastAPIAuthSystem.db"
     JWT_SECRET_KEY: str = "supersecret"
     JWT_ALGORITHM: str = "HS256"
 

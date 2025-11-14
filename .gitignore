@@ -5,7 +5,7 @@ __pycache__/
 *.pyd
 *.pyc
 
-# 虛擬環境 
+# 正式上線才要忽略,因為現在是測驗測試用所以就不忽略
 # venv/
 # env/
 # .env/
@@ -29,3 +29,6 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# Node.js
+frontend/README.md

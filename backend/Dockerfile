@@ -15,5 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 複製後端程式碼
 COPY . .
 
+EXPOSE  8000
+
 # 啟動 FastAPI
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
