@@ -125,7 +125,7 @@
 - **開發環境**：http://localhost:3000
 - **部署於Render連結**：[網站連結](https://fastapi-user-test-frontend.onrender.com/)
 - **部署於Render後端API 文件 連結**：[API_Swagger文件連結](https://fastapi-auth-system-test.onrender.com/docs#)
-
+- **補充**：請先打開後端api文件網址,讓伺服器開啟跑一下,因為部屬於render是用免費專案,時間久沒有請求就會待機...,可能要等個10~50秒。
 
 ---
 
