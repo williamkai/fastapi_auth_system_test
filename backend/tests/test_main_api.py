@@ -112,14 +112,14 @@ def test_admin_required_permissions(client: TestClient, db_session: Session):
     user_token = user_login_res.json()["access_token"]
     
     user_headers = {"Authorization": f"Bearer {user_token}"}
-    response_user = client.get("/api/v1/users/users", headers=user_headers)
+    response_user = client.get("/api/v1/users", headers=user_headers)
     assert response_user.status_code == 403  # 應該被拒絕
     # 3. 管理員用戶登入並嘗試訪問
     admin_login_res = client.post("/api/v1/auth/login", data={"username": admin_username, "password": admin_password})
     admin_token = admin_login_res.json()["access_token"]
 
     admin_headers = {"Authorization": f"Bearer {admin_token}"}
-    response_admin = client.get("/api/v1/users/users", headers=admin_headers)
+    response_admin = client.get("/api/v1/users", headers=admin_headers)
     assert response_admin.status_code == 200  # 應該成功
     assert isinstance(response_admin.json(), list) # 應返回列表
 
@@ -165,7 +165,7 @@ def test_token_refresh(client: TestClient):
     # 3. 使用新 Token 訪問受保護的端點
     new_access_token = new_tokens["access_token"]
     me_response = client.get(
-        "/api/v1/users/me",
+        "/api/v1/me",
         headers={"Authorization": f"Bearer {new_access_token}"}
     )
     assert me_response.status_code == 200

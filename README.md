@@ -240,17 +240,56 @@ curl -X DELETE "http://localhost:8010/api/v1/users/2" \
 
 ## 🧪 測試執行方式
 
-1. 確認已安裝 pytest
+以下說明如何在本地環境測試後端 FastAPI 專案：
+
+### 1. 建立並啟用虛擬環境
+
+建議為專案創建獨立虛擬環境，以避免套件衝突：
+
 ```bash
-pip install pytest
+# 建立虛擬環境
+python3 -m venv fastapi-ts
+
+# 啟用虛擬環境（Linux / macOS）
+source fastapi-ts/bin/activate
+
+# Windows PowerShell
+fastapi-ts\Scripts\Activate.ps1
 ```
-2. 執行後端測試
+
+### 2. 安裝專案依賴
+
+進入後端專案資料夾（`fastapi_auth_system_test/backend/`），安裝正式運行所需套件：
+
+```bash
+cd fastapi_auth_system_test/backend/
+pip install -r requirements.txt
+```
+
+> 注意：這裡會安裝 FastAPI、SQLAlchemy 等專案依賴，確保測試與應用程式可以正常運行。
+
+### 3. 安裝測試專用套件
+
+測試需要額外套件 `pytest` 與 `httpx`：
+
+```bash
+pip install pytest httpx
+```
+
+> `pytest` 用來執行測試，`httpx` 提供 FastAPI `TestClient` 用於模擬 HTTP 請求。
+
+### 4. 執行測試
+
+進入後端目錄，執行測試：
+
 ```bash
 pytest tests/
 ```
-3. 預期測試：
-- 用戶註冊 / 登入
-- 權限驗證 (admin vs user)
-- Token 刷新機制
 
----
+### 5. 預期測試結果
+
+* 用戶註冊 / 登入功能測試
+* 權限驗證（admin vs user）
+* Token 刷新機制
+
+> 注意：測試過程會 import FastAPI app，因此 FastAPI 及其相關依賴必須已正確安裝。

@@ -1,4 +1,10 @@
 # tests/conftest.py
+import sys
+from pathlib import Path
+
+# 將 backend 目錄加入 Python 搜尋路徑
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
